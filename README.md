@@ -27,7 +27,7 @@ WHERE Id >= 15445
 ORDER BY Id
 LIMIT 20
 ```
-  ![image](pic/qs2.png)
+  ![image](Pic/qs2.png)
 # Q3
 ```sql
 SELECT B.CompanyName, ROUND(A.count1*1.0/B.count2,2)As Ratio
@@ -46,7 +46,7 @@ WHERE
 GROUP BY 'Order'.ShipVia)B
 Order BY Ratio DESC
 ```
-  ![image](pic/qs3.png)
+  ![image](Pic/qs3.png)
 # Q4
 ```sql
 SELECT C.CategoryName,count(*)count,Round(avg(P.UnitPrice),2)avgPrice,
@@ -56,7 +56,7 @@ WHERE C.Id=P.CategoryId
 GROUP BY P.CategoryId
 HAVING count(*)>10
 ```
-  ![image](pic/qs4.png)
+  ![image](Pic/qs4.png)
 # Q5
 ```sql
 SELECT a.ProductName,a.CompanyName,a.ContactName
@@ -74,7 +74,7 @@ FROM
     ON a.Id=b.Id
 GROUP BY ProductName)a
 ```
-  ![image](pic/qs5.png)
+  ![image](Pic/qs5.png)
 # Q6
 ```sql
 SELECT Id,a.OrderDate,lag(a.OrderDate,1,OrderDate) OVER (ORDER BY a.OrderDate)as Previous,
@@ -87,7 +87,7 @@ FROM(SELECT O.OrderDate,O.Id
     )a
 
 ```
-  ![image](pic/qs6.png)
+  ![image](Pic/qs6.png)
 # Q7
 ```sql
 WITH total AS(
@@ -113,7 +113,7 @@ WHERE total.CustomerId=C.Id
 ORDER BY sum
 
 ```
-  ![image](pic/qs7.png)
+  ![image](Pic/qs7.png)
 # Q8
 ```sql
 SELECT R.RegionDescription,FirstName,LastName,BirthDate
@@ -123,7 +123,7 @@ WHERE E.id=EmpT.EmployeeId AND
     R.Id=T.RegionId
 GROUP BY R.RegionDescription
 ```
-  ![image](pic/qs8.png)
+  ![image](Pic/qs8.png)
 # Q9
 ```sql
 (SELECT P.ProductName,P.Id
@@ -137,4 +137,4 @@ GROUP BY R.RegionDescription
             Order by P.id
 )
 ```
-  ![image](pic/qs9.png)
+  ![image](Pic/qs9.png)

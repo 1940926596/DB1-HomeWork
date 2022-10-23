@@ -7,7 +7,7 @@ from 'Order'
 where ShipName Like '%-%'
 Order by ShipName;
 ```
-  ![image](pic/qs1.png)
+  ![image](Pic/qs1.png)
 # Q2
 ```sql
 -- SQLite

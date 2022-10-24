@@ -126,6 +126,8 @@ GROUP BY R.RegionDescription
   ![image](Pic/qs8.png)
 # Q9
 ```sql
+SELECT group_concat(ProductName,',') as Product
+FROM
 (SELECT P.ProductName,P.Id
     FROM Product P,Customer C,'Order' O,OrderDetail OrD
     WHERE  
